@@ -66,168 +66,131 @@
     exp(confint(modelo.1, level = 0.95))
 
 #modelo hecho_mamografia + etnia
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     datos.bin$etnia <- relevel(datos.bin$etnia, ref = "Ninguna de las anteriores")
     levels(datos.bin$etnia)
-#Modelo
- 
+    #Modelo
     modelo.2 <- glm(hecho_mamografia ~ etnia, data=datos.bin, family=binomial)
     summary(modelo.2)
-
-#Calculo de los OR de las estimaciónes del modelo.2
-
+    #Calculo de los OR de las estimaciónes del modelo.2
     exp(coef(modelo.2))
-#Calculo de los intervalos de confianza para los parametros del modelo.2
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.2
     exp(confint(modelo.2, level = 0.95))
 
 #modelo hecho_mamografia + nivel educativo
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     niv_educativo <- relevel(niv_educativo , ref = "Ninguno")
     levels(niv_educativo)
     table(niv_educativo)
-
-#Modelo 
-
+    #Modelo 
     modelo.3 <- glm(hecho_mamografia ~ niv_educativo, data=datos.bin, family=binomial)
     summary(modelo.3)
-
-#Calculo de los OR de las estimaciónes del modelo.3
-
+    #Calculo de los OR de las estimaciónes del modelo.3
     exp(coef(modelo.3))
-#Calculo de los intervalos de confianza para los parametros del modelo.3
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.3
     exp(confint(modelo.3, level = 0.95))
-#modelo hecho_mamografia + estado civil
-#Definir categoria de referencia
 
+#modelo hecho_mamografia + estado civil
+
+    #Definir categoria de referencia
     datos.bin$estado_civil <- relevel(datos.bin$estado_civil, ref = "Soltera(o)")
     levels(datos.bin$estado_civil)
-#Modelo
-
+    #Modelo
     modelo.4 <- glm(hecho_mamografia ~ estado_civil, data=datos.bin, family=binomial)
     summary(modelo.4)
-
-#Calculo de los OR de las estimaciónes del modelo.4
-
+    #Calculo de los OR de las estimaciónes del modelo.4
     exp(coef(modelo.4))
-#Calculo de los intervalos de confianza para los parametros del modelo.4
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.4
     exp(confint(modelo.4, level = 0.95))
 
 #modelo hecho_mamografia + afiliación a la seguridad social en salud
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     datos.bin$afil_salud <- relevel(datos.bin$afil_salud, ref = "No está afiliado(a)")
     levels(datos.bin$afil_salud)
-#Modelo
-
+    #Modelo
     modelo.5 <- glm(hecho_mamografia ~ afil_salud, data=datos.bin, family=binomial)
     summary(modelo.5)
-
-#Calculo de los OR de las estimaciónes del modelo.5
-
+    #Calculo de los OR de las estimaciónes del modelo.5
     exp(coef(modelo.5))
-#Calculo de los intervalos de confianza para los parametros del modelo.5
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.5
     exp(confint(modelo.5, level = 0.95))
 
 #modelo hecho_mamografia + actividad economica
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     datos.bin$act_economica <- relevel(datos.bin$act_economica, ref = "No trabaja actualmente")
     levels(datos.bin$act_economica)
-#Modelo
-
+    #Modelo
     modelo.6 <- glm(hecho_mamografia ~ act_economica, data=datos.bin, family=binomial)
     summary(modelo.6)
-
-#Calculo de los OR de las estimaciónes del modelo.6
-
+    #Calculo de los OR de las estimaciónes del modelo.6
     exp(coef(modelo.6))
-#Calculo de los intervalos de confianza para los parametros del modelo.6
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.6
     exp(confint(modelo.6, level = 0.95))
 
 #modelo hecho_mamografia + indice de riqueza
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     datos.bin$ind_riqueza <- relevel(datos.bin$ind_riqueza, ref = "Más bajo")
     levels(datos.bin$ind_riqueza)
-#Modelo
-
+    #Modelo
     modelo.7 <- glm(hecho_mamografia ~ ind_riqueza, data=datos.bin, family=binomial)
     summary(modelo.7)
-#Calculo de los OR de las estimaciónes del modelo.7
-
+    #Calculo de los OR de las estimaciónes del modelo.7
     exp(coef(modelo.7))
-#Calculo de los intervalos de confianza para los parametros del modelo.7
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.7
     exp(confint(modelo.7, level = 0.95))
 
 #modelo hecho_mamografia + zona
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     datos.bin$zona <- relevel(datos.bin$zona, ref = "Rural")
     levels(datos.bin$zona)
-#Modelo
-
+    #Modelo
     modelo.8 <- glm(hecho_mamografia ~ zona, data=datos.bin, family=binomial)
     summary(modelo.8)
-
-#Calculo de los OR de las estimaciónes del modelo.8
-
+    #Calculo de los OR de las estimaciónes del modelo.8
     exp(coef(modelo.8))
-#Calculo de los intervalos de confianza para los parametros del modelo.8
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.8
     exp(confint(modelo.8, level = 0.95))
 
 #modelo hecho_mamografia + región
-#Definir categoria de referencia
 
+    #Definir categoria de referencia
     datos.bin$región <- relevel(datos.bin$región, ref = "Territorios Nacionales")
     levels(datos.bin$región)
-#Modelo
-
+    #Modelo
     modelo.9 <- glm(hecho_mamografia ~ región, data=datos.bin, family=binomial)
     summary(modelo.9)
-
-#Calculo de los OR de las estimaciónes del modelo.9
-
+    #Calculo de los OR de las estimaciónes del modelo.9
     exp(coef(modelo.9))
-#Calculo de los intervalos de confianza para los parametros del modelo.9
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.9
     exp(confint(modelo.9, level = 0.95))
 
 #Modelo hecho mamografia + todas las variables
 
     modelo.10 <- glm(hecho_mamografia ~edad+etnia+niv_educativo+estado_civil+afil_salud+act_economica+ind_riqueza+zona+región,               data=datos.bin, family=binomial)
     summary(modelo.10)
-
-#Calculo de los OR de las estimaciónes del modelo.10
-
+    #Calculo de los OR de las estimaciónes del modelo.10
     exp(coef(modelo.10))
-#Calculo de los intervalos de confianza para los parametros del modelo.10
-   
+    #Calculo de los intervalos de confianza para los parametros del modelo.10   
     exp(confint(modelo.10, level = 0.95))
 
-#Paquete necesario
 #Selección automatica de variables mediante procedimiento stepwise
 
+    #Paquete necesario
     library(MASS)
     modelo.full <- glm(hecho_mamografia ~ edad+etnia+niv_educativo+estado_civil+afil_salud+act_economica+ind_riqueza+zona+región, data =     datos.bin,
                    family = binomial)
-     modelo.inicial <- glm(hecho_mamografia~ 1, data = datos.bin, family = binomial)
+    modelo.inicial <- glm(hecho_mamografia~ 1, data = datos.bin, family = binomial)
     modelo.stp <- stepAIC(modelo.inicial, scope = list(upper = modelo.full), direction = "both")
     summary(modelo.stp)
-
-#Calculo de los OR de las estimaciónes del modelo.stp
-
+    #Calculo de los OR de las estimaciónes del modelo.stp
     exp(coef(modelo.stp))
-#Calculo de los intervalos de confianza para los parametros del modelo.stp
-
+    #Calculo de los intervalos de confianza para los parametros del modelo.stp
     exp(confint(modelo.stp, level = 0.95))
 
 #Devianza del modelo modelo.stp
