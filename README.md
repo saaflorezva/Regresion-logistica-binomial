@@ -46,7 +46,7 @@
          ...)
     NULL
 
-#modelo hecho_mamografia + edad categorizada
+#Modelo hecho_mamografia + edad categorizada
 #Definir modalidad de referencia
 
     datos.bin$edad <- relevel(datos.bin$edad, ref = "40 a 49")
@@ -65,7 +65,7 @@
 
     exp(confint(modelo.1, level = 0.95))
 
-#modelo hecho_mamografia + etnia
+#Modelo hecho_mamografia + etnia
 
     #Definir categoria de referencia
     datos.bin$etnia <- relevel(datos.bin$etnia, ref = "Ninguna de las anteriores")
@@ -78,7 +78,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.2
     exp(confint(modelo.2, level = 0.95))
 
-#modelo hecho_mamografia + nivel educativo
+#Modelo hecho_mamografia + nivel educativo
 
     #Definir categoria de referencia
     niv_educativo <- relevel(niv_educativo , ref = "Ninguno")
@@ -92,7 +92,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.3
     exp(confint(modelo.3, level = 0.95))
 
-#modelo hecho_mamografia + estado civil
+#Modelo hecho_mamografia + estado civil
 
     #Definir categoria de referencia
     datos.bin$estado_civil <- relevel(datos.bin$estado_civil, ref = "Soltera(o)")
@@ -105,7 +105,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.4
     exp(confint(modelo.4, level = 0.95))
 
-#modelo hecho_mamografia + afiliación a la seguridad social en salud
+#Modelo hecho_mamografia + afiliación a la seguridad social en salud
 
     #Definir categoria de referencia
     datos.bin$afil_salud <- relevel(datos.bin$afil_salud, ref = "No está afiliado(a)")
@@ -118,7 +118,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.5
     exp(confint(modelo.5, level = 0.95))
 
-#modelo hecho_mamografia + actividad economica
+#Modelo hecho_mamografia + actividad economica
 
     #Definir categoria de referencia
     datos.bin$act_economica <- relevel(datos.bin$act_economica, ref = "No trabaja actualmente")
@@ -131,7 +131,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.6
     exp(confint(modelo.6, level = 0.95))
 
-#modelo hecho_mamografia + indice de riqueza
+#Modelo hecho_mamografia + indice de riqueza
 
     #Definir categoria de referencia
     datos.bin$ind_riqueza <- relevel(datos.bin$ind_riqueza, ref = "Más bajo")
@@ -144,7 +144,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.7
     exp(confint(modelo.7, level = 0.95))
 
-#modelo hecho_mamografia + zona
+#Modelo hecho_mamografia + zona
 
     #Definir categoria de referencia
     datos.bin$zona <- relevel(datos.bin$zona, ref = "Rural")
@@ -157,7 +157,7 @@
     #Calculo de los intervalos de confianza para los parametros del modelo.8
     exp(confint(modelo.8, level = 0.95))
 
-#modelo hecho_mamografia + región
+#Modelo hecho_mamografia + región
 
     #Definir categoria de referencia
     datos.bin$región <- relevel(datos.bin$región, ref = "Territorios Nacionales")
@@ -240,12 +240,10 @@
 
     (posicion.max <- sapply(perf1@y.values, which.max))
     (punto.corte <- sapply(perf1@x.values, "[", posicion.max))
-
     plot(perf1, col = "darkred")
 # Añadimos una línea horizontal al valor de 0.8
     abline(h = 0.8, lty = 2)
-# Añadimos recta con el punto de corte que maximiza la tasa de
-# clasificaciones correctas
+# Añadimos recta con el punto de corte que maximiza la tasa de clasificaciones correctas
     abline(v = punto.corte, lty = 2)
 
 #Genera el valor bajo la curva de ROC(Ajuste del modelo)
@@ -261,11 +259,11 @@
     plot(perf2, colorize = TRUE,xlab="Razón de verdaderos positivos", ylab="Razón de falsos positivos",cex=0.5) # mostramos colores         según el punto de corte
 # Añadimos la recta y=x que sería la correspondiente al peor clasificador
     abline(a = 0, b = 1)
-# añadimos el valor del área bajo la curva
+# Añadimos el valor del área bajo la curva
     text(0.4, 0.6, paste(AUC@y.name, "\n", round(unlist(AUC@y.values), 3)), cex = 0.7)
 
 
-#Generar compración de modelos a traves de prediccion de los modelos ajustados
+#Generar comparación de modelos a traves de prediccion de los modelos ajustados
 
     pred.modelo.stp <- prediction(fitted.values(modelo.stp), datos.bin$hecho_mamografia)
     perf.modelo.stp <- performance(pred.modelo.stp, "tpr", "fpr")
@@ -283,8 +281,8 @@
     plot(modelo.stp, cex = 0.5)
 
 #Prueba de multicolinealidad de las variables predictoras
-#Paquete necesario
 
+    #Paquete necesario
     library(car)
     vif(modelo.stp)
 
