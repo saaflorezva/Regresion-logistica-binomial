@@ -4,7 +4,7 @@
 
     datos <-read.csv2( "D:/Especialización Estadistica/Semestre II/Seminario de Investigación/Tesis/BD/Bd filtradas/Se ha hecho la           mamografia/hecho_mamografia.csv", header=T)
 
-#Definir variable respuesta-dicótomica(Si/No)
+#Definir variable respuesta-dicótomica
 
     hecho_mamografia <- datos$q938r
     levels(datos$q938r)
