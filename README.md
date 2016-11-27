@@ -1,4 +1,4 @@
-# Regresion-logistica-multiple
+# Regresion-logistica-binomial
 
 #Cargar datos
 
